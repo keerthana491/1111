@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Paws | Pet Adoption</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f7f2;
+    color: #333;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    background: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #4b7f52;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #4b7f52;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 8%;
+    background: linear-gradient(
+        120deg,
+        #eef5ea,
+        #f8f7f2
+    );
+}
+
+.hero-text {
+    width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 52px;
+    color: #355e3b;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #666;
+    max-width: 550px;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: #4b7f52;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.hero-btn:hover {
+    background: #355e3b;
+}
+
+
+/* ================= HERO IMAGE ================= */
+
+.hero-image {
+    width: 45%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    text-align: center;
+    padding: 70px 10%;
+    background: white;
+}
+
+.about h2 {
+    color: #355e3b;
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.about p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    color: #666;
+    font-size: 17px;
+}
+
+
+/* ================= FEATURES ================= */
+
+.features {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.features h2 {
+    color: #355e3b;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.feature-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.feature-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card .icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: #355e3b;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* ================= CALL TO ACTION ================= */
+
+.cta {
+    background: #355e3b;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.cta h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.cta p {
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: white;
+    color: #355e3b;
+    text-decoration: none;
+    padding: 13px 28px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.cta-btn:hover {
+    background: #f1f1f1;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #263d2a;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-text p {
+        margin: auto;
+    }
+
+    .hero-image {
+        width: 80%;
+        margin-top: 35px;
+    }
+
+    .feature-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 45px 6%;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .hero-image {
+        width: 95%;
+    }
+
+    .hero-image img {
+        height: 300px;
+    }
+
+    .about h2,
+    .features h2 {
+        font-size: 28px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <div class="logo">
+        🐾 Happy Paws
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="pets.php">
+            Available Pets
+        </a>
+
+        <a href="pets.php">
+            Pet Details
+        </a>
+
+        <a href="adoption.html">
+            Adoption
+        </a>
+
+        <a href="summary.php">
+            Summary
+        </a>
+
+        <a href="payment.html">
+            Payment
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h1>
+            Give a Paw,
+            <br>
+            A Loving Home 🐾
+        </h1>
+
+        <p>
+            Welcome to Happy Paws, a place where loving families
+            and wonderful pets find each other. Explore our pets,
+            learn about them, and give a beautiful animal a second
+            chance at happiness.
+        </p>
+
+        <a
+            href="pets.php"
+            class="hero-btn"
+        >
+            Meet Our Pets
+        </a>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1450778869180-41d0601e046e"
+            alt="Happy pets"
+        >
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT SECTION ================= -->
+
+<section class="about">
+
+    <h2>
+        About Happy Paws
+    </h2>
+
+    <p>
+        Happy Paws is a pet adoption platform created to connect
+        loving families with pets looking for a safe and caring home.
+        Browse our available pets, learn about them, and begin your
+        adoption journey today.
+    </p>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <h2>
+        Why Adopt From Happy Paws?
+    </h2>
+
+
+    <div class="feature-container">
+
+
+        <div class="feature-card">
+
+            <div class="icon">
+                🐶
+            </div>
+
+            <h3>
+                Loving Pets
+            </h3>
+
+            <p>
+                Discover friendly and loving pets waiting
+                for their forever homes.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="icon">
+                ❤️
+            </div>
+
+            <h3>
+                Responsible Adoption
+            </h3>
+
+            <p>
+                We encourage responsible pet adoption and
+                lifelong care for every animal.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="icon">
+                🏠
+            </div>
+
+            <h3>
+                Forever Homes
+            </h3>
+
+            <p>
+                Help a pet find a safe, loving and permanent
+                home where they can be happy.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="cta">
+
+    <h2>
+        Ready to Meet Your New Best Friend?
+    </h2>
+
+    <p>
+        Explore our available pets and find the perfect companion.
+    </p>
+
+    <a
+        href="pets.php"
+        class="cta-btn"
+    >
+        View Available Pets
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Happy Paws Pet Adoption |
+        Give Love, Give a Home 🐾
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
+  
+ 
+
+    
