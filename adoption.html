@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Happy Paws | Adoption</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f7f2;
+    color: #333;
+}
+
+/* NAVIGATION */
+
+nav {
+    background: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 12px #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #27675d;
+}
+
+.logo span {
+    color: #df8050;
+}
+
+nav a {
+    text-decoration: none;
+    color: #444;
+    margin-left: 22px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #27675d;
+}
+
+
+/* HEADER */
+
+.header {
+    text-align: center;
+    padding: 45px 20px 35px;
+    background: linear-gradient(120deg, #e7f2ee, #fff7ed);
+}
+
+.small-title {
+    color: #df8050;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.header h1 {
+    font-size: 42px;
+    color: #244f49;
+    margin: 12px;
+}
+
+.header p {
+    color: #666;
+    font-size: 16px;
+}
+
+
+/* FORM AREA */
+
+.form-section {
+    padding: 45px 20px 60px;
+}
+
+.form-box {
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px #ddd;
+}
+
+.form-box h2 {
+    color: #244f49;
+    margin-top: 0;
+}
+
+.form-box .intro {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+
+/* FORM */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #444;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: Arial;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #27675d;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+
+/* PET FIELD */
+
+.pet-selected {
+    background: #edf6f3;
+}
+
+
+/* BUTTON */
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #27675d;
+    color: white;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #174d45;
+}
+
+
+/* NOTE */
+
+.note {
+    margin-top: 18px;
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #1d3834;
+    color: white;
+    padding: 35px 8%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer h3 {
+    color: #a9d8cf;
+}
+
+footer p {
+    color: #ddd;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid #45615c;
+    color: #bbb;
+}
+
+
+/* MOBILE */
+
+@media(max-width: 800px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    .form-box {
+        padding: 25px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="logo">
+Happy <span>Paws</span>
+</div>
+
+<div>
+
+<a href="index.html">Home</a>
+
+<a href="pets.html">Available Pets</a>
+
+<a href="details.html">Pet Details</a>
+
+<a href="adoption.html">Adoption</a>
+
+<a href="summary.php">Summary</a>
+
+<a href="payment.html">Payment</a>
+
+</div>
+
+</nav>
+
+
+<!-- HEADER -->
+
+<section class="header">
+
+<div class="small-title">
+START YOUR ADOPTION JOURNEY
+</div>
+
+<h1>Adoption Application</h1>
+
+<p>
+Tell us a little about yourself and your future companion.
+</p>
+
+</section>
+
+
+<!-- FORM -->
+
+<section class="form-section">
+
+<div class="form-box">
+
+<h2>Adopter Information</h2>
+
+<p class="intro">
+Please provide accurate details to complete your adoption application.
+</p>
+
+
+<form
+action="adoption.php"
+method="POST"
+onsubmit="return validateForm()">
+
+
+<!-- NAME -->
+
+<div class="form-group">
+
+<label>Full Name</label>
+
+<input
+type="text"
+name="name"
+id="name"
+placeholder="Enter your full name">
+
+</div>
+
+
+<!-- AGE -->
+
+<div class="form-group">
+
+<label>Age</label>
+
+<input
+type="number"
+name="age"
+id="age"
+placeholder="Enter your age"
+min="1"
+max="69">
+
+</div>
+
+
+<!-- PHONE -->
+
+<div class="form-group">
+
+<label>Phone Number</label>
+
+<input
+type="text"
+name="phone"
+id="phone"
+placeholder="10-digit mobile number"
+maxlength="10">
+
+</div>
+
+
+<!-- EMAIL -->
+
+<div class="form-group">
+
+<label>Email Address</label>
+
+<input
+type="email"
+name="email"
+id="email"
+placeholder="example@gmail.com">
+
+</div>
+
+
+<!-- ADDRESS -->
+
+<div class="form-group">
+
+<label>Address</label>
+
+<textarea
+name="address"
+id="address"
+placeholder="Enter your complete address"></textarea>
+
+</div>
+
+
+<!-- PET -->
+
+<div class="form-group">
+
+<label>Pet You Want to Adopt</label>
+
+<select
+name="pet"
+id="pet"
+class="pet-selected">
+
+<option value="">
+Select Pet
+</option>
+
+<option value="Bruno">Bruno</option>
+
+<option value="Max">Max</option>
+
+<option value="Rocky">Rocky</option>
+
+<option value="Simba">Simba</option>
+
+<option value="Milo">Milo</option>
+
+<option value="Daisy">Daisy</option>
+
+<option value="Oscar">Oscar</option>
+
+<option value="Ruby">Ruby</option>
+
+<option value="Luna">Luna</option>
+
+<option value="Bella">Bella</option>
+
+<option value="Coco">Coco</option>
+
+<option value="Mimi">Mimi</option>
+
+<option value="Leo">Leo</option>
+
+<option value="Misty">Misty</option>
+
+<option value="Snowy">Snowy</option>
+
+<option value="Rio">Rio</option>
+
+<option value="Shelly">Shelly</option>
+
+<option value="Kiwi">Kiwi</option>
+
+</select>
+
+</div>
+
+
+<!-- REASON -->
+
+<div class="form-group">
+
+<label>Why do you want to adopt?</label>
+
+<textarea
+name="reason"
+id="reason"
+placeholder="Tell us why you would like to adopt this pet"></textarea>
+
+</div>
+
+
+<!-- SUBMIT -->
+
+<button
+type="submit"
+class="submit-btn">
+
+Submit Adoption Application
+
+</button>
+
+
+</form>
+
+
+<div class="note">
+
+Your information will be securely stored for the adoption process.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-content">
+
+<div>
+
+<h3>Happy Paws</h3>
+
+<p>
+Helping pets find loving forever homes.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Contact</h3>
+
+<p>happypaws@gmail.com</p>
+
+<p>+91 98765 43210</p>
+
+</div>
+
+
+<div>
+
+<h3>Quick Links</h3>
+
+<p>Available Pets</p>
+
+<p>Adoption Application</p>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Happy Paws Pet Adoption. All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* VALIDATION */
+
+function validateForm() {
+
+    var name =
+    document.getElementById("name").value.trim();
+
+    var age =
+    document.getElementById("age").value;
+
+    var phone =
+    document.getElementById("phone").value.trim();
+
+    var email =
+    document.getElementById("email").value.trim();
+
+    var address =
+    document.getElementById("address").value.trim();
+
+    var pet =
+    document.getElementById("pet").value;
+
+    var reason =
+    document.getElementById("reason").value.trim();
+
+
+    /* PATTERNS */
+
+    var namePattern = /^[A-Za-z ]+$/;
+
+    var phonePattern = /^[0-9]{10}$/;
+
+    var emailPattern =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    /* NAME */
+
+    if (name == "") {
+
+        alert("Please enter your name.");
+
+        return false;
+
+    }
+
+    if (!namePattern.test(name)) {
+
+        alert("Name should contain only letters and spaces.");
+
+        return false;
+
+    }
+
+
+    /* AGE */
+
+    if (age == "") {
+
+        alert("Please enter your age.");
+
+        return false;
+
+    }
+
+    if (age < 1 || age >= 70) {
+
+        alert("Age must be between 1 and 69.");
+
+        return false;
+
+    }
+
+
+    /* PHONE */
+
+    if (!phonePattern.test(phone)) {
+
+        alert("Phone number must contain exactly 10 digits.");
+
+        return false;
+
+    }
+
+
+    /* EMAIL */
+
+    if (!emailPattern.test(email)) {
+
+        alert("Please enter a valid email address.");
+
+        return false;
+
+    }
+
+
+    /* ADDRESS */
+
+    if (address.length < 10) {
+
+        alert("Please enter a valid address.");
+
+        return false;
+
+    }
+
+
+    /* PET */
+
+    if (pet == "") {
+
+        alert("Please select a pet.");
+
+        return false;
+
+    }
+
+
+    /* REASON */
+
+    if (reason.length < 10) {
+
+        alert("Please provide a valid reason for adoption.");
+
+        return false;
+
+    }
+
+
+    alert(
+    "All details are valid! Adoption application is being submitted."
+    );
+
+    return true;
+
+}
+
+
+/* GET SELECTED PET FROM PAGE 3 */
+
+var selectedPet =
+new URLSearchParams(window.location.search).get("pet");
+
+
+if (selectedPet) {
+
+    document.getElementById("pet").value =
+    selectedPet;
+
+}
+
+</script>
+
+
+</body>
+
+</html>
